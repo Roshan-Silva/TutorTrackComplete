@@ -1,120 +1,163 @@
-.header{
+.header {
     width: 90%;
     margin: 80px auto -10px;
     height: 80vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    background-color: #bdbdf1;
+    flex-wrap: wrap;
 }
-.header-left{
+
+.header-left {
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
+    gap: 16px;
 }
-.header-left h1{
+
+.header-left h1 {
     font-size: 100px;
     color: #0e0e72;
+    margin: 0;
+    line-height: 1.1;
 }
-.header-left span{
+
+.header-left span {
     color: #534ee2;
 }
-.header-left p{
+
+.header-left p {
     font-size: 25px;
     color: #282d94;
     font-weight: 500;
+    max-width: 90%;
+    line-height: 1.4;
 }
-.visit-us-button{
-    display: flex;
+
+.visit-us-button {
+    display: inline-flex;
     align-items: center;
     gap: 15px;
     background: #9290C3;
+    color: white;
     font-size: 20px;
-    padding: 8px 16px;
+    padding: 10px 20px;
     margin-top: 25px;
-    border-radius: 16px;
+    border-radius: 999px;
     cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 2px solid transparent;
 }
-.visit-us-button:hover{
+
+.visit-us-button:hover {
     background: transparent;
-    transition: 0.5s;
+    color: #9290C3;
+    border-color: #9290C3;
     gap: 20px;
 }
-.visit-us-button img{
+
+.visit-us-button img {
     width: 25px;
+    transition: transform 0.3s ease;
 }
-.header-right{
+
+.visit-us-button:hover img {
+    transform: translateX(3px);
+}
+
+.header-right {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50%;
 }
-.header-right img{
+
+.header-right img {
     width: 100%;
     border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-@media(max-width:1025px){
-    .header-left h1{
+/* Media Queries */
+@media (max-width: 1025px) {
+    .header {
+        height: 60vh;
+        margin: 20px auto -40px;
+        padding: 30px 20px;
+    }
+
+    .header-left h1 {
         font-size: 80px;
     }
-    .header-left p{
+
+    .header-left p {
         font-size: 20px;
     }
-    .header{
-        margin: 20px auto -40px;
-        height: 60vh;
-    }
 }
-@media(max-width:769px){
-    .header{
+
+@media (max-width: 769px) {
+    .header {
         flex-direction: column;
-        height: 95vh;
+        height: auto;
+        gap: 40px;
     }
-    .header-left{
-        margin: 80px auto -20px;
-    
-        width: 80%;
+
+    .header-left, .header-right {
+        width: 90%;
+        text-align: center;
+        align-items: center;
     }
-    .header-left h1{
-        font-size: 100px;
+
+    .header-left {
+        margin: 40px 0 0;
     }
-    .header-left p{
-        font-size: 30px;
-    }
-    .header-right{
-        width: 80%;
-        
-    }
-    
-}
-@media(max-width:426px){
-    .header{
-        height: 60vh;
-    }
-    .header-left{
-        margin: 100px auto 50px;
-       width: 90%;
-        
-    }
-    .header-left h1{
+
+    .header-left h1 {
         font-size: 60px;
     }
-    .header-left p{
-        font-size: 18px;
+
+    .header-left p {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 426px) {
+    .header {
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .header-left {
+        margin: 80px auto 40px;
         width: 100%;
     }
-    .header-right{
-        width: 90%;
-      
+
+    .header-left h1 {
+        font-size: 48px;
     }
-    .visit-us-button{
-        padding: 10px 12px;
+
+    .header-left p {
+        font-size: 18px;
+    }
+
+    .visit-us-button {
+        padding: 10px 14px;
         font-size: 16px;
     }
-    .visit-us-button img{
+
+    .visit-us-button img {
         width: 18px;
     }
-    
+
+    .header-right {
+        width: 100%;
+    }
 }

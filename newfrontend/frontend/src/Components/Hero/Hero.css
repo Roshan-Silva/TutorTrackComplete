@@ -1,10 +1,26 @@
+/* Root color variables for easy theme changes */
+:root {
+    --primary-color: #3b82f6;     /* Blue-500 */
+    --primary-light: #e0f2fe;     /* Blue-100 */
+    --secondary-color: #10b981;   /* Green-500 */
+    --text-dark: #1f2937;         /* Slate-800 */
+    --text-light: #6b7280;        /* Gray-500 */
+    --bg-light: #f9fafb;          /* Gray-50 */
+    --card-bg: #e8dada;
+    --shadow-light: rgba(0, 0, 0, 0.06);
+    --shadow-dark: rgba(0, 0, 0, 0.15);
+}
+
 /* Hero Section Styles */
 .hero {
     display: flex;
     flex-direction: column;
     width: 90%;
-    margin: 60px auto;
+    max-width: 1200px;
+    margin: 80px auto;
     text-align: center;
+    gap: 60px;
+    /* background-color: rgb(206, 209, 202); */
 }
 
 .hero-text {
@@ -12,81 +28,82 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px;
 }
 
 .hero-text h1 {
-    font-size: 48px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 18px;
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 50px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-light);
+    max-width: 700px;
+    line-height: 1.6;
 }
 
+/* Hero Cards */
 .hero-containers {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    margin-bottom: 40px;
 }
 
 .hero-container {
-    padding: 30px;
-    background: #fff;
-    border-radius: 15px;
-    width: 320px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.hero-container h1 {
-    font-size: 28px;
-    font-weight: 600;
-    color: #222;
-    margin-bottom: 15px;
-}
-
-.hero-container p {
-    font-size: 16px;
-    color: #666;
+    padding: 25px 30px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 360px;
+    border-top: 5px solid var(--secondary-color);
+    box-shadow: 0 6px 20px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
 }
 
 .hero-container:hover {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 30px;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px var(--shadow-dark);
+    border-color: var(--primary-color);
+    background: var(--primary-light);
 }
 
-/* Media Queries for Responsiveness */
-@media(max-width: 1024px) {
-    .hero-container {
-        width: 280px;
-    }
+.hero-container h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
 }
 
-@media(max-width: 768px) {
+.hero-container p {
+    font-size: 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
     .hero {
-        margin: 100px auto 20px;
+        margin: 60px auto 40px;
+        gap: 40px;
     }
-    
+
     .hero-text h1 {
-        font-size: 36px;
-        width: 80%;
+        font-size: 2.25rem;
     }
-    
+
     .hero-text p {
-        font-size: 14px;
-        width: 80%;
-        line-height: 1.5;
+        font-size: 1rem;
+        padding: 0 10px;
     }
-    
-    .hero-containers {
-        margin: 0 auto 40px;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
+
+    .hero-container {
+        max-width: 100%;
     }
 }
